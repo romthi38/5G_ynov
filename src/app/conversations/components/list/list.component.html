@@ -1,0 +1,44 @@
+<mat-list>
+  <h3 mat-subheader>Discussions</h3>
+
+  <mat-list-item>
+    <conversation-create-button></conversation-create-button>
+  </mat-list-item>
+
+  <mat-list-item *ngFor="let conversation of filteredConversations"
+                 (click)="showConversation(conversation)">
+    <h4 mat-line>
+      {{ conversation.label }}&nbsp;
+    </h4>
+
+    <button mat-icon-button
+            [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button *ngIf="conversation.status === 'creator'"
+              mat-menu-item
+              (click)="openAddMemberModal(conversation)">
+        <mat-icon>person_add</mat-icon>
+        <span>Ajouter des membres</span>
+      </button>
+
+      <button mat-menu-item
+              (click)="leaveOrDeleteConv(conversation)">
+
+        <span *ngIf="conversation.status === 'creator'">
+          <mat-icon>delete</mat-icon>
+          <span>Supprimer la conversation</span>
+        </span>
+
+        <span *ngIf="conversation.status === 'member'">
+          <mat-icon>close</mat-icon>
+          <span>Quitter la conversation</span>
+        </span>
+      </button>
+    </mat-menu>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+</mat-list>

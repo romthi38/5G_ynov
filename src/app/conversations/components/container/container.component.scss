@@ -1,0 +1,31 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  h1 {
+    flex-basis: 10%;
+    align-content: center;
+  }
+
+  conversation-messages-list {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  conversation-post-message-form {
+    flex-basis: 10%;
+  }
+
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

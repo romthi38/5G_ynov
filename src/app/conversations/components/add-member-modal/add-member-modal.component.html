@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Ajouter des membres à la conversation</h1>
+
+<h4>Sont déjà présents :</h4>
+<ul *ngFor="let member of conversation?.members">
+  <li role="listitem">{{ member.firstname }} {{ member.lastname }}</li>
+</ul>
+
+<div mat-dialog-content>
+  <mat-form-field *ngIf="availableUsersList.length > 0">
+    <mat-select placeholder="Membres"
+                [(ngModel)]="members"
+                multiple>
+      <mat-option *ngFor="let user of availableUsersList"
+                  [value]="user?.id">
+        {{ user?.login }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button
+          (click)="onCancel()">
+    Annuler
+  </button>
+  <button *ngIf="availableUsersList.length > 0"
+          mat-raised-button
+          color="primary"
+          cdkFocusInitial
+          (click)="addMembers()">
+    Ajouter
+  </button>
+</div>

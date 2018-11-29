@@ -1,0 +1,21 @@
+.success {
+  background-color: #8BC34A;
+}
+
+.warning {
+  background-color: #FFA726;
+}
+
+.danger {
+  background-color: #FF3D00;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px white solid;
+  bottom: 5px;
+}

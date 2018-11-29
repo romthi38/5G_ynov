@@ -1,0 +1,14 @@
+<form>
+  <mat-form-field>
+    <textarea matInput placeholder="Écrivez votre message..."
+              name="message"
+              [(ngModel)]="message">
+    </textarea>
+  </mat-form-field>
+
+  <button mat-fab
+          color="primary"
+          (click)="sendMessage()">
+    <mat-icon aria-label="paperplane icon">send</mat-icon>
+  </button>
+</form>

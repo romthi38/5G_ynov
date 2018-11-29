@@ -1,0 +1,26 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+
+  * {
+    font-family: "pt", normal;
+  }
+
+  .quote {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+
+  .author {
+    align-self: flex-end;
+  }
+}

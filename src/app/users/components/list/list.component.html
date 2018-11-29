@@ -1,0 +1,14 @@
+<mat-list>
+  <h3 mat-subheader>Utilisateurs</h3>
+
+  <mat-list-item *ngFor="let user of filteredUsers">
+    <img matListAvatar [src]="user.avatar || '/src/assets/img/pusheen/1.png'" alt="">
+    <span [ngClass]="[statusColor[user.status.id], 'status-indicator']"></span>
+
+    <h4 mat-line>
+      {{ user.login }}&nbsp;
+    </h4>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+</mat-list>

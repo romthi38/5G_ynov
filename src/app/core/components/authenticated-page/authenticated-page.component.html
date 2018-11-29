@@ -1,0 +1,47 @@
+<div class="content">
+  <aside>
+    <a [routerLink]="['/app']"
+       class="home-btn">
+      <img [src]="randomHomeBtn" alt="">
+    </a>
+
+    <conversations-list></conversations-list>
+  </aside>
+
+  <div class="center"
+       [style.backgroundImage]="randomBackground">
+    <div class="overlay"></div>
+    <div>
+      <router-outlet name="authenticatedRouter"></router-outlet>
+    </div>
+  </div>
+
+  <aside>
+    <mat-list>
+      <mat-list-item>
+        <img matListAvatar
+             [src]="user.avatar || '/src/assets/img/pusheen/1.png'"
+             [matMenuTriggerFor]="menu">
+
+        <h3 mat-line>{{ user.firstname }}&nbsp;{{ user.lastname }}</h3>
+
+        <app-heartbeat></app-heartbeat>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+    </mat-list>
+
+    <mat-menu #menu="matMenu">
+      <app-logout-button></app-logout-button>
+      <button mat-menu-item
+              *ngIf="user?.isAdmin"
+              (click)="goToBackoffice()">
+        Administrer
+      </button>
+    </mat-menu>
+
+    <users-list-filters></users-list-filters>
+
+    <users-list></users-list>
+  </aside>
+</div>

@@ -1,0 +1,16 @@
+<div>
+  <form>
+    <mat-form-field>
+      <textarea matInput placeholder="Modifiez le mot du directeur..."
+                name="message"
+                [(ngModel)]="message">
+      </textarea>
+    </mat-form-field>
+
+    <button mat-raised-button
+            color="primary"
+            (click)="sendMessage()">
+      Mettre à jour
+    </button>
+  </form>
+</div>

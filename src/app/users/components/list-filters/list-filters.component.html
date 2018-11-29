@@ -1,0 +1,20 @@
+<form>
+  <mat-form-field>
+    <mat-select placeholder="Statut"
+                [formControl]="selectedStatuses"
+                multiple
+                (selectionChange)="onStatusSelect()">
+      <mat-option *ngFor="let status of statuses"
+                  [value]="status.id">
+        {{ status.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+           [formControl]="searchedLogin"
+           placeholder="Rechercher un utilisateur"
+           (input)="onLoginSearch()">
+  </mat-form-field>
+</form>

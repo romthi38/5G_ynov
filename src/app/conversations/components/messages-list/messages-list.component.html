@@ -1,0 +1,21 @@
+<div class="messages-list">
+  <div *ngFor="let message of messagesList"
+       class="message-container"
+       [ngClass]="message.author?.id === user.id ? 'right' : 'left'">
+    <div *ngIf="message.author?.id !== user.id"
+         class="author">
+      {{ message.author?.firstname }} {{ message.author?.lastname }} dit :
+    </div>
+
+    <div class="content"
+         [innerHtml]="message.content">
+    </div>
+  </div>
+
+  <div *ngIf="previewMessage"
+       class="message-container right preview-message">
+    <div class="overlay"></div>
+    <app-spinner [color]="'#ff7675'"></app-spinner>
+    <div [innerHtml]="previewMessage"></div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="content">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <input matInput placeholder="Identifiant" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Mot de passe" formControlName="password" type="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="login()">Se connecter</button>
+  </form>
+</div>
