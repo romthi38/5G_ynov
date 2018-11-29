@@ -15,6 +15,11 @@
 ## Tests unitaires
 Les tests unitaires ont été effectués uniquement sur les services, donc sur les appels à l'API. Ils peuvent être lancés à partir de la commande ```ng test```.
 
+## Fonctionnalités
+La plupart des spécifications ont été implémentées, à quelques exceptions près :
+1. Il n'est pas possible de cliquer sur l'avatar d'un utilisateur pour l'intégrer à une conversation
+1. On ne récupère les messages d'une conversation qu'une seule fois, en même temps qu'on récupère la conversation
+1. Il n'est pas posibble de supprimer/éditer d'autres membres
 
 ## Architecture du projet
 Le code de l'application est situé dans ```src/app```.
@@ -39,7 +44,11 @@ Les routes de l'API sont écrites dans le fichier `src/environments/environment.
 
 ## Choix des technologies
 Afin de concevoir le lot 1 « Messagerie instantanée » pour la partie front-end, nous avons dû prendre certaines décisions sur les technologies à utiliser. Dans un premier temps, nous nous sommes tournés vers NodeJS.  
+
 NodeJS est un environnement d’exécution Javascript construit sur le moteur JavaScript V8 de Chrome. Node.js utilise un modèle basé sur l’évènementielle et des entrées/sorties non bloquantes, ce qui le rend léger et efficace. L’écosystème de logiciel de Node.js, npm, est le plus grand écosystème de bibliothèque open source au monde. NodeJS peut être utilisé sur la partie front-end mais aussi sur la partie back-end. Dans notre cas, NodeJS sera principalement utilisé pour son système de gestion de packets (NPM) et pour avoir un serveur de développement. 
+
 Ensuite, nous utiliserons « Angular ». Angular a été développé par Google, il en est actuellement à la version 7. Il s’agit d’un Framework complet, celui-ci dispose d’une communauté assez conséquente, son architecture est élégante et très dogmatique. Il possède un moteur d’injection de dépendances et celui-ci est bien documenté. Angular impose l’utilisation du Type script, langage très normé qui force à coder de manière stricte et propre. Nous avons choisi ce Framework car il s’agit d’un des plus connus, son efficacité n’est plus à démontrer. De plus, nous sommes deux dans le groupe à connaître cette technologie et à pouvoir transférer nos compétences aux autres membres. 
+
 Pour la partie site statique, nous avons choisi le système de templating « Mustache ». En effet, une des contraintes de cette partie était de ne pas utiliser de Javascript. Ce système permet de créer un affichage conditionnel sans l’emploi de Javascript et donc de respecter les contraintes. Nous avons choisi Mustache en accord avec les autres équipes (frontend et backend), car il s’agit d’un moteur compatible avec la plupart des langages backend. 
+
 Enfin, encore pour la partie statique du site, nous avons décidé de réaliser nos interfaces en Material Design. Nous allons donc utiliser le Framework « Materialize CSS ». Ce Framework permet de reproduire en un rien de temps des pages web dans le style du Material Design en réutilisant des modèles prêts à l’emploi. Littéralement, il s’agit d’avoir un cadre de travail dont la promesse est de respecter une charte graphique, en l’occurrence ici, celle du Material Design.  
